@@ -1,2 +1,3 @@
 # Vehicle Service
-This is an example web service that uses CRUD based on Spring Boot.
+This is an CRUD web service that uses Spring Boot.
+
