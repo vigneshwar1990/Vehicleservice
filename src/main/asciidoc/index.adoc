@@ -1,0 +1,107 @@
+
+Vehicle Services  Guide
+
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+[[overview]]
+= Overview
+
+
+[[overview-http-verbs]]
+== HTTP verbs
+
+This RESTful API tries to adhere as closely as possible to standard HTTP and REST conventions in its
+use of HTTP verbs.
+
+
+|===
+| Verb | Usage
+
+| `GET`
+| Used to retrieve a resource
+
+| `POST`
+| Used to create a new resource
+
+| `PUT`
+| Used to update an existing resource, including partial updates
+
+| `DELETE`
+| Used to delete an existing resource
+|===
+
+[[overview-http-status-codes]]
+== HTTP status codes
+
+This RESTful API tries to adhere as closely as possible to standard HTTP and REST conventions in its
+use of HTTP status codes.
+
+|===
+| Status code | Usage
+
+| `200 OK`
+| The request completed successfully
+
+| `201 Created`
+| A new resource has been created successfully. The resource's URI is available from the response's
+`Location` header
+
+| `204 No Content`
+| An update to an existing resource has been applied successfully
+
+| `400 Bad Request`
+| The request was malformed. The response body will include an error providing further information
+
+| `404 Not Found`
+| The requested resource did not exist
+|===
+
+[[resources]]
+= Resources
+
+[[create-vehicle]]
+== Vehicle Create
+
+A `POST` request will create the Vehicle.
+
+operation::create-vehicle[snippets='request-fields,response-fields,curl-request,http-response']
+
+[[update-vehicle]]
+== Vehicle Update
+
+A `PUT` request will update the Vehicle.
+
+operation::update-vehicle[snippets='request-fields,response-fields,curl-request,http-response']
+
+[[retrieve-vehicle]]
+== Vehicle Retrieve
+
+A `GET` request will retrieve the Vehicle by vehicle id.
+
+operation::retrieve-vehicle[snippets='path-parameters,response-fields,curl-request,http-response']
+
+[[retrieve-all-vehicles]]
+== Retrieve All Vehicles
+
+A `GET` request will retrieve all the Vehicles from database.
+
+operation::retrieve-all-vehicles[snippets='response-fields,curl-request,http-response']
+
+[[retrieve-all-vehicles-year]]
+== Retrieve All Vehicles Based on Year
+
+A `GET` request will retrieve all the Vehicles from database based on the year.
+
+operation::retrieve-all-vehicles-year[snippets='path-parameters,response-fields,curl-request,http-response']
+
+[[retrieve-all-vehicles-makeandmodel]]
+== Retrieve All Vehicles Based on Make and Model
+
+A `GET` request will retrieve all the Vehicles from database based on make and model.
+
+operation::retrieve-all-vehicles-makeandmodel[snippets='path-parameters,response-fields,curl-request,http-response']
